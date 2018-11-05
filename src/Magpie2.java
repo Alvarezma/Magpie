@@ -44,6 +44,12 @@ public class Magpie2 {
 		} else if (statement.indexOf("padjen") >= 0
 				|| statement.indexOf("Padjen") >= 0) {
 			response = "He sounds like a great teacher.";
+		} else if (statement.indexOf("weather") >= 0) {
+			response = "I havent ever been outside :(";
+		} else if (statement.indexOf("you") >= 0) {
+			response = "I want to talk about you more";
+		} else if (statement.indexOf("humans") >= 0) {
+			response = "I love humans";
 		} else if (statement.trim().length() == 0) {
 			response = "Say something, please.";
 		} else {

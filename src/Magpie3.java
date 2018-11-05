@@ -27,7 +27,7 @@ public class Magpie3 {
 	 */
 	public String getResponse(String statement) {
 		String response = "";
-		if (statement.length() == 0) {
+		if (statement.trim().length() == 0) {
 			response = "Say something, please.";
 		} else if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
@@ -36,6 +36,17 @@ public class Magpie3 {
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
+		} else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0) {
+			response = "Tell me more about your pets.";
+		} else if (findKeyword(statement, "padjen") >= 0) {
+			response = "He sounds like a great teacher.";
+		} else if (findKeyword(statement, "weather") >= 0) {
+			response = "I havent ever been outside :(";
+		} else if (findKeyword(statement, "you") >= 0) {
+			response = "I want to talk about you more";
+		} else if (findKeyword(statement, "humans") >= 0) {
+			response = "I love humans";
 		} else {
 			response = getRandomResponse();
 		}
@@ -121,7 +132,7 @@ public class Magpie3 {
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse() {
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -134,6 +145,10 @@ public class Magpie3 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
+		} else if (whichResponse == 4) {
+			response = "I've been too busy to even think about it.";
+		} else if (whichResponse == 5) {
+			response = "I'm intrigued.";
 		}
 
 		return response;

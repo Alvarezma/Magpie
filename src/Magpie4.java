@@ -101,8 +101,8 @@ public class Magpie4 {
 		int psnOfYou = findKeyword(statement, "you", 0);
 		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
 
-		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe)
-				.trim();
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+		
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
 
